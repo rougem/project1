@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+</head>
+
+<body>
+    <h1>Admin Paneli</h1>
+    <p style="font-style: italic;">
+        <a href="https://www.udemy.com/course/python-django-ile-web-uygulama-gelistirme-egitimi/learn/lecture/19006292#bookmarks"
+            target="_blank">DERS LİNKİ</a>
+        Admin paneli normal koşullarda djangoda hazırdır ancak bazı gereklilikleri yerine getirmek gerekir. Biz ilk
+        denememizde bir hata almıştık
+    </p>
+
+    <img src="/course error.JPG" width="800px"> <br> Böyle bir tablo bulunmamaktadır </img>
+
+    <p style="font-style: normal;">
+        You have 17 unapplied migration(s). Your project may not work properly until you apply the migrations for
+        app(s): admin, auth, contenttypes, sessions.
+        Run 'python manage.py migrate' to apply them. şeklinde bir yazı gelmişti pyhton manage.py runserver ile.
+        DJANGOnun bize sundugu halihazırda yüklü appleri bu şekilde veritabanına yollayabiliriz.<br>
+        python manage.py migrate kullanılarak bu migration yapılır <br>
+        Sonra python manage.py runserver ile tekrar server çalıştırılır. Bu noktada admin paneli aktive olmuştur. VS
+        code da Yeni bir terminal açılır. <br>
+        python manage.py createsuperuser <br>
+        <!--rougem amorphous-->
+    </p>
+
+    <img src="/admin webpage.JPG" width="800px"> <br> Böyle bir giriş sayfası oluşur </img> <br>
+
+    <img src="/admin yönetim sayfası.JPG" width="800px"> <br> Yönetici sayfasına oluşturdugumuz superuser isim ve
+    şifresi ile gireriz. </img> <br>
+
+    <p style="font-style: normal;">
+        İlk uygulamanın eklenmesi için:
+        python manage.py startapp uygulamaadı yazılır <br>
+        Böylelikle yei bir folder daha oluşur bu uygulamada todoapp adını verdik uygulamaya. İçerisinde çeşitli py
+        dosyalarıyla oluşur. bu app todo project altında bulunuyor. <br>
+        <b>migration</b> modelleri veri tabanına aktaracağımız bölümdür <br>
+        <b>init.py</b> içerisi boş bir py <br>
+        <b>admin</b> admin ile ilgili işlemlerin yapıldığı dosyalarıyla <br>
+        <b>apps</b> uygulamalar <br>
+        <b>models</b> database deki tabloları oluştururuz. sql <br>
+        <b>tests</b> çok kullanılmaz. <br>
+        <b>views</b> En sık kullanılar py dosyasıdır. BUrada sınıflar, fonksiyonlar oluşturulur. <br>
+        Bu alana bir de url bölümü eklenir. <br>
+        <img src="/todoapp.JPG" alt="todoapp görünüm" width="300px">
+
+    </p>
+
+    <p style="font-style: normal;">
+        İlk olarak URL'ler ayarlanır. <br>
+        İkinci aşamada templateler ayarlanır <br>
+        Son olarak view ayarlanır <br>
+        <a
+            href="https://www.udemy.com/course/python-django-ile-web-uygulama-gelistirme-egitimi/learn/lecture/19006300#bookmarks">app
+            ayarları ve web sitesi prensibi</a> <br>
+        <img src="/web sitesi prensibi.JPG" width="300p"> <br>
+    </p>
+
+    <p style="font-style: normal;">
+        <b>URL ayarları</b> İndex ve About sayfaları hazırlanır. todoapp içerisinde url dosyası bulunmuyor. İlk iş
+        burada bir URLS.py oluşturmak. New file ile urls.py diye bir dosya oluşturuyoruz<br>
+        TODO projectteki urls.py den kod kopyalanabilir ev düzenlenirler: <br>
+
+        from django.contrib import admin <br>
+        from django.urls import path <br>
+
+        urlpatterns = [ <br>
+        path('admin/', admin.site.urls), <br>
+        ] <br>
+        Bu noktada url'ler oluşturulur. Sonrasında view da fonksiyonlarımızı oluşturarak oluşturulan urllerin çalışması
+        sağlanır. index ve about url lelerini temel olarak uyguladık. Gidilen sayfada ise html ler vasıtası ile
+        templateler oluşturulur. index.html, about.html gibi.
+
+        <a
+            href="https://www.udemy.com/course/python-django-ile-web-uygulama-gelistirme-egitimi/learn/lecture/19007418#bookmarks">app
+            ayarları ve web sitesi prensibi</a> <br>
+    </p>
+
+    <p style="font-style: normal;">
+        Bu noktada url'ler oluşturulur. Sonrasında view da fonksiyonlarımızı oluşturarak oluşturulan urllerin çalışması sağlanır. index ve about url lelerini temel olarak uyguladık. Gidilen sayfada ise html ler vasıtası ile
+        templateler oluşturulur. index.html, about.html gibi. <br> Todo project içerisinde e templates adında bir folder ve altında da todo_app diye bir folder oluşturulur. Buraya index ve about.html oluşturulur. Oluşturulan htmler djangoya settingsdeki directoryden tanıtılır bunun için aşağıdaki kod kullanılır. 
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
+        <a
+            href="https://www.udemy.com/course/python-django-ile-web-uygulama-gelistirme-egitimi/learn/lecture/19007436#bookmarks">templateler: index ve about.html</a> <br>
+    </p>
+    <!---->
