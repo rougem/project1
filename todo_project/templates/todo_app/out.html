@@ -1,3 +1,5 @@
+{% extends "todo_app/base.html" %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -32,15 +34,17 @@
         </form>
       </div>
     </nav>
-
+    
+    {% block content %} 
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4"> <Center>TO-DO LIST</Center> </h1>
         <p class="lead"><center> This is the example TO-DO list for Python Django Web Development Course</center> </p>
-       <p> <center> <a href="https://www.udemy.com/course/python-django-ile-web-uygulama-gelistirme-egitimi-kursu/learn/lecture/19205628?start=345#overview">Python - Django ile Web Geliştirme Eğitimi</a></center></p>
+       <p> <center> <a href="https://www.udemy.com/course/python-django-ile-web-uygulama-gelistirme-egitimi-kursu/learn/lecture/19205628?start=345#overview">Python - Django ile Web Geliştirme Eğitimi. Ne kadar değişik?</a></center></p>
        <div class="text-center"><button type="button" class="btn btn-dark">Create TO-DO List</button>
       </div>
     </div>
+    {% endblock content %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
